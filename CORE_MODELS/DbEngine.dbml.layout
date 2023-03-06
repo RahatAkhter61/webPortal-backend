@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.625" name="DbEngine">
+  <DataContextMoniker Name="/DbEngineDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a44c64b8-d063-459e-8fa8-ebf94a142472" isExpanded="false" absoluteBounds="2.75, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DbEngineDataContext/SRCC_APILogs_HI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d357c0d-26d6-4e7c-a9d3-e8d6eb4c6241" absoluteBounds="2.7649999999999997, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="055ad733-4960-4487-aab2-c7aa51b4232a" absoluteBounds="5.125, 0.625, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/DbEngineDataContext/FNGL_Accounts_TR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6751c642-ba11-4791-89f0-c4b33ed07dca" absoluteBounds="5.14, 1.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="543a6a98-dfcc-4a0c-a187-4b771ec8ad9b" absoluteBounds="5.875, 5.25, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/DbEngineDataContext/SRCC_CardDebit_Reversal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3280c639-132a-4796-a157-6e5503d34257" absoluteBounds="5.89, 5.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08736da0-b3c1-4deb-ac39-3f8d527ecff7" absoluteBounds="8.125, 3.5, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/DbEngineDataContext/SRCC_CardDebitTrans_TR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d86f9c65-3fa9-4b94-8461-7042fb2152b5" absoluteBounds="8.14, 3.96, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 3.90945556640625); (8.125 : 3.90945556640625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DbEngineDataContext/FNGL_Accounts_TR/FNGL_Accounts_TR_SRCC_CardDebitTrans_TR" />
+      <nodes>
+        <classShapeMoniker Id="055ad733-4960-4487-aab2-c7aa51b4232a" />
+        <classShapeMoniker Id="08736da0-b3c1-4deb-ac39-3f8d527ecff7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="13f5baed-1692-4c56-99af-1e59d7fd52ab" absoluteBounds="7.875, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DbEngineDataContext/FNGL_RefundTransactionTracking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3978ba38-264d-498e-a9b1-19c4e9588076" absoluteBounds="7.8900000000000006, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9 : 3.5); (9 : 2.84780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DbEngineDataContext/SRCC_CardDebitTrans_TR/SRCC_CardDebitTrans_TR_FNGL_RefundTransactionTracking" />
+      <nodes>
+        <classShapeMoniker Id="08736da0-b3c1-4deb-ac39-3f8d527ecff7" />
+        <classShapeMoniker Id="13f5baed-1692-4c56-99af-1e59d7fd52ab" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="532739b2-ed18-47f7-a4ef-dd0936f5c1d9" absoluteBounds="1.75, 2.625, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/DbEngineDataContext/SRCC_CardActivation_TR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbce12b4-922a-443e-b9f2-2c144d9eab87" absoluteBounds="1.7650000000000001, 3.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 3.47195556640625); (3.75 : 3.47195556640625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DbEngineDataContext/FNGL_Accounts_TR/FNGL_Accounts_TR_SRCC_CardActivation_TR" />
+      <nodes>
+        <classShapeMoniker Id="055ad733-4960-4487-aab2-c7aa51b4232a" />
+        <classShapeMoniker Id="532739b2-ed18-47f7-a4ef-dd0936f5c1d9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="aed0437e-1de3-4465-a047-6df31690a44e" absoluteBounds="4.5, 4.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DbEngineDataContext/SRCC_UserLogin_ST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1ed96f1-4de4-4ad1-ae82-37c872507feb" absoluteBounds="4.515, 5.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

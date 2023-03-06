@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CoreDbEngine" Class="DbEngineDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-U66R582\KPDEV1;Initial Catalog=CoreDbEngine;User ID=sa" SettingsObjectName="CORE_MODELS.Properties.Settings" SettingsPropertyName="CoreDbEngineConnectionString3" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SRCC_APILogs_HI" Member="SRCC_APILogs_HIs">
+    <Type Name="SRCC_APILogs_HI">
+      <Column Name="APILogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="APIId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KeyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Request" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RequestOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Response" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ResponseOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FNGL_Accounts_TR" Member="FNGL_Accounts_TRs">
+    <Type Name="FNGL_Accounts_TR">
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="WalletId" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstId" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CustomerId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CloseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InitialLoad" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InitialLoadAmount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="FNGL_Accounts_TR_SRCC_CardDebitTrans_TR" Member="SRCC_CardDebitTrans_TRs" ThisKey="AccountId" OtherKey="AccountId" Type="SRCC_CardDebitTrans_TR" />
+      <Association Name="FNGL_Accounts_TR_SRCC_CardActivation_TR" Member="SRCC_CardActivation_TRs" ThisKey="AccountId" OtherKey="AccountId" Type="SRCC_CardActivation_TR" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SRCC_CardDebit_Reversal" Member="SRCC_CardDebit_Reversals">
+    <Type Name="SRCC_CardDebit_Reversal">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DebitId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsCredited" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InitiatedDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SettlementDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TransReference" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TransDescription" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ProofImagePath" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RefundAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DateofFailure" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DebitRefundStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefundApprovalStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreditTransactionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SRCC_CardDebitTrans_TR" Member="SRCC_CardDebitTrans_TRs">
+    <Type Name="SRCC_CardDebitTrans_TR">
+      <Column Name="DebitId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardNo" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="TransCode" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DebitAmount" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="AmountCurrency" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FeeAmount" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="RequestInfo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IsRequested" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RequestedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaymentSuccess" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PaymentTransId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PaymentDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="MsgId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsLedgerAdded" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SRCC_CardDebitTrans_TR_FNGL_RefundTransactionTracking" Member="FNGL_RefundTransactionTrackings" ThisKey="DebitId" OtherKey="DebitId" Type="FNGL_RefundTransactionTracking" />
+      <Association Name="FNGL_Accounts_TR_SRCC_CardDebitTrans_TR" Member="FNGL_Accounts_TR" ThisKey="AccountId" OtherKey="AccountId" Type="FNGL_Accounts_TR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FNGL_RefundTransactionTracking" Member="FNGL_RefundTransactionTrackings">
+    <Type Name="FNGL_RefundTransactionTracking">
+      <Column Name="RefundtrackingId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DebitId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefundAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="RefundApprovalStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SRCC_CardDebitTrans_TR_FNGL_RefundTransactionTracking" Member="SRCC_CardDebitTrans_TR" ThisKey="DebitId" OtherKey="DebitId" Type="SRCC_CardDebitTrans_TR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SRCC_CardActivation_TR" Member="SRCC_CardActivation_TRs">
+    <Type Name="SRCC_CardActivation_TR">
+      <Column Name="ActivationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ActionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardNo" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="Pin" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="RequestType" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CardType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FIID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IsRequested" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RequestedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NIStatus" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NIErrorCode" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NIDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CardId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="FNGL_Accounts_TR_SRCC_CardActivation_TR" Member="FNGL_Accounts_TR" ThisKey="AccountId" OtherKey="AccountId" Type="FNGL_Accounts_TR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SRCC_UserLogin_ST" Member="SRCC_UserLogin_ST">
+    <Type Name="SRCC_UserLogin_ST">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LoginType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EmiratesId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_GetAPIIncrementalValue" Method="SP_GetAPIIncrementalValue">
+    <Parameter Name="APIId" Parameter="aPIId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_GetAPIIncrementalValueResult">
+      <Column Name="IncrementalValue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

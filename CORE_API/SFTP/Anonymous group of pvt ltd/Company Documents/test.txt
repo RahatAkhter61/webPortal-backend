@@ -1,0 +1,11 @@
+Virtual Dataase ( directly push backup on virtual db)
+Create backup on different location so we can restore easily in case of deletion from another location
+
+
+for that we have to install many services for safe sql what it will impact on our storage?
+Q2 : is sql safe is availbe on Azure?
+as you are said wec can create backup on differnet location ?
+will it make real time backup or will make it after some time?
+
+
+i am backup recovery service 

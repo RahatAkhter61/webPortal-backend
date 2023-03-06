@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 22.625, 28" name="WPS">
+  <DataContextMoniker Name="/WPSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e1501fe5-cfef-48e0-9f7c-517d9df3f6fb" absoluteBounds="20.25, 17.5, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/WPSDataContext/DCRDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b178b8b-ca77-4ca3-b3ef-82320cb9771b" absoluteBounds="20.265, 17.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03e5ac2d-0b15-4597-9701-0772a9bc351c" absoluteBounds="0.75, 4.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/WPSDataContext/WPSConfiguration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4449c64-cc4b-4da1-8f01-09d26ad0b805" absoluteBounds="0.765, 5.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="764804d4-3243-48e0-a766-f2496f587dac" absoluteBounds="14.5, 21.375, 2, 4.8477197265625023">
+      <DataClassMoniker Name="/WPSDataContext/DifDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3bcd595-a71d-4a86-a0cb-8e737b9232e2" absoluteBounds="14.515, 21.835, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="160e94e6-625d-4e01-922e-c353d2bcca05" absoluteBounds="11.75, 24, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/WPSDataContext/DifMaster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6791624-c83b-48f8-86f7-f2abeb0e675e" absoluteBounds="11.765, 24.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f535811-2db5-449f-b50e-5dd128c1d8af" absoluteBounds="11.75, 15.375, 2, 6.9630354817708309">
+      <DataClassMoniker Name="/WPSDataContext/PAFDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a75a948-c8ba-4396-9326-b7b517db3a70" absoluteBounds="11.765, 15.835, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ed23086-a715-49f7-b52c-5d04768dc661" absoluteBounds="0.75, 14.875, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/WPSDataContext/PAFMaster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b6d22ca-c0d1-429c-a017-65fcb5e24f9c" absoluteBounds="0.765, 15.335, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f60e5c5-8788-4050-9750-130c020dea4e" absoluteBounds="3.5, 11, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/WPSDataContext/PRCDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6eea855a-9126-433a-9504-a673b7f3828d" absoluteBounds="3.515, 11.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6730852a-e369-4a4c-8507-709cfc3e95a3" absoluteBounds="14.5, 17.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/WPSDataContext/RFADetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac23c6cb-6b0e-4264-90d6-e41cc8546116" absoluteBounds="14.515, 17.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a96f9000-adb0-418a-bef0-2856ad42c42d" absoluteBounds="9, 18.125, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/WPSDataContext/RFRDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55c09946-8c91-4b78-943a-0b2fb3b2719f" absoluteBounds="9.015, 18.585, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9208d440-1e54-4ffa-885d-64aacb42d77a" absoluteBounds="14.5, 12.5, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/WPSDataContext/RRI_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6143fe0-c419-46bd-8f58-17f321690898" absoluteBounds="14.515, 12.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ef3cfb5-239e-4a45-a141-84346054bcde" absoluteBounds="17.25, 12.75, 2, 3.6939111328125005">
+      <DataClassMoniker Name="/WPSDataContext/RRR_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b655179-fce2-422c-8438-5fc6fb955db3" absoluteBounds="17.265, 13.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6bf58d93-9bda-4a57-bcf8-beb6c1672685" absoluteBounds="17.25, 8, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/WPSDataContext/RSU_Master" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da64ee59-3f01-4ae3-8e76-827b763e9f52" absoluteBounds="17.265, 8.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="828368cf-d125-4667-97b4-a60e96722ad3" absoluteBounds="20, 12.875, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/WPSDataContext/RSUStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10ee7a42-e2e7-4c2b-bb56-cbc9321e903e" absoluteBounds="20.015, 13.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="324a0268-2116-456f-823d-fc2b0b3ca3a3" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/WPSDataContext/RTC_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0ac37337-7e47-49d6-99f2-598c1edc5536" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23410de5-4bf8-49e7-be6d-4ae2b48db8f8" absoluteBounds="6.25, 16.875, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/WPSDataContext/SifDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b78510cb-0fe5-4264-8e70-5825f7b8d9b0" absoluteBounds="6.265, 17.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7984e93c-9d3b-4edf-b728-b996945de1df" absoluteBounds="3.5, 16.25, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/WPSDataContext/SifMaster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbeb95e0-560a-4854-a68f-7ba37f1b2c26" absoluteBounds="3.515, 16.71, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="748a11bf-d96b-464c-ab6a-c5a504640c2b" absoluteBounds="9, 14.875, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/WPSDataContext/SIFNAKDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25e7992d-2adf-46a1-bf86-156a18bb19ca" absoluteBounds="9.015, 15.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="097fe570-22c7-4bfd-a1de-ee2a8e65dd63" absoluteBounds="17.5, 17.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/WPSDataContext/TopUpRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75e6ed6d-31f3-4dde-a7ed-15f172411fb2" absoluteBounds="17.515, 17.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.5 : 23.7988598632813); (21.25 : 23.7988598632813); (21.25 : 21.1939111328125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/DifDetail/DifDetail_DCRDetail" />
+      <nodes>
+        <classShapeMoniker Id="764804d4-3243-48e0-a766-f2496f587dac" />
+        <classShapeMoniker Id="e1501fe5-cfef-48e0-9f7c-517d9df3f6fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 25.1113598632813); (14.5 : 25.1113598632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/DifMaster/DifMaster_DifDetail" />
+      <nodes>
+        <classShapeMoniker Id="160e94e6-625d-4e01-922e-c353d2bcca05" />
+        <classShapeMoniker Id="764804d4-3243-48e0-a766-f2496f587dac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 21.8565177408854); (14.5 : 21.8565177408854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFDetail/PAFDetail_DifDetail" />
+      <nodes>
+        <classShapeMoniker Id="4f535811-2db5-449f-b50e-5dd128c1d8af" />
+        <classShapeMoniker Id="764804d4-3243-48e0-a766-f2496f587dac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.5 : 21.5532588704427); (13.75 : 21.5532588704427)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/DifDetail/DifDetail_PAFDetail" />
+      <nodes>
+        <classShapeMoniker Id="764804d4-3243-48e0-a766-f2496f587dac" />
+        <classShapeMoniker Id="4f535811-2db5-449f-b50e-5dd128c1d8af" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 16.9142569986979); (3.25 : 16.9142569986979); (3.25 : 14.625); (12.75 : 14.625); (12.75 : 15.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFMaster/PAFMaster_PAFDetail" />
+      <nodes>
+        <classShapeMoniker Id="8ed23086-a715-49f7-b52c-5d04768dc661" />
+        <classShapeMoniker Id="4f535811-2db5-449f-b50e-5dd128c1d8af" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 14.875); (1.75 : 12.5585034179688); (3.5 : 12.5585034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFMaster/PAFMaster_PRCDetail" />
+      <nodes>
+        <classShapeMoniker Id="8ed23086-a715-49f7-b52c-5d04768dc661" />
+        <classShapeMoniker Id="2f60e5c5-8788-4050-9750-130c020dea4e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.5 : 18.8662019856771); (13.75 : 18.8662019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/RFADetail/RFADetail_PAFDetail" />
+      <nodes>
+        <classShapeMoniker Id="6730852a-e369-4a4c-8507-709cfc3e95a3" />
+        <classShapeMoniker Id="4f535811-2db5-449f-b50e-5dd128c1d8af" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 18.1206009928385); (14.5 : 18.1206009928385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFDetail/PAFDetail_RFADetail" />
+      <nodes>
+        <classShapeMoniker Id="4f535811-2db5-449f-b50e-5dd128c1d8af" />
+        <classShapeMoniker Id="6730852a-e369-4a4c-8507-709cfc3e95a3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 20.2315177408854); (11.75 : 20.2315177408854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/RFRDetail/RFRDetail_PAFDetail" />
+      <nodes>
+        <classShapeMoniker Id="a96f9000-adb0-418a-bef0-2856ad42c42d" />
+        <classShapeMoniker Id="4f535811-2db5-449f-b50e-5dd128c1d8af" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.5 : 12.59375); (20.9166666666667 : 12.59375 : JumpStart); (21.0833333333333 : 12.59375 : JumpEnd); (22.15625 : 12.59375); (22.15625 : 17.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/RRI_Detail/RRI_Detail_DCRDetail" />
+      <nodes>
+        <classShapeMoniker Id="9208d440-1e54-4ffa-885d-64aacb42d77a" />
+        <classShapeMoniker Id="e1501fe5-cfef-48e0-9f7c-517d9df3f6fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 15.9767569986979); (14.5 : 15.9767569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFDetail/PAFDetail_RRI_Detail" />
+      <nodes>
+        <classShapeMoniker Id="4f535811-2db5-449f-b50e-5dd128c1d8af" />
+        <classShapeMoniker Id="9208d440-1e54-4ffa-885d-64aacb42d77a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 14.875); (2.2812525 : 14.4022534179688); (14.5 : 14.4022534179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFMaster/PAFMaster_RRI_Detail" />
+      <nodes>
+        <classShapeMoniker Id="8ed23086-a715-49f7-b52c-5d04768dc661" />
+        <classShapeMoniker Id="9208d440-1e54-4ffa-885d-64aacb42d77a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.5 : 14.5969555664063); (17.25 : 14.5969555664063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/RRI_Detail/RRI_Detail_RRR_Detail" />
+      <nodes>
+        <classShapeMoniker Id="9208d440-1e54-4ffa-885d-64aacb42d77a" />
+        <classShapeMoniker Id="9ef3cfb5-239e-4a45-a141-84346054bcde" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.25 : 14.6258048502604); (20 : 14.6258048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/RRR_Detail/RRR_Detail_RSUStatus" />
+      <nodes>
+        <classShapeMoniker Id="9ef3cfb5-239e-4a45-a141-84346054bcde" />
+        <classShapeMoniker Id="828368cf-d125-4667-97b4-a60e96722ad3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.25 : 9.55850341796875); (21 : 9.55850341796875); (21 : 12.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/RSU_Master/RSU_Master_RSUStatus" />
+      <nodes>
+        <classShapeMoniker Id="6bf58d93-9bda-4a57-bcf8-beb6c1672685" />
+        <classShapeMoniker Id="828368cf-d125-4667-97b4-a60e96722ad3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 19.4431062825521); (9 : 19.4431062825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/SifDetail/SifDetail_RFRDetail" />
+      <nodes>
+        <classShapeMoniker Id="23410de5-4bf8-49e7-be6d-4ae2b48db8f8" />
+        <classShapeMoniker Id="a96f9000-adb0-418a-bef0-2856ad42c42d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 18.8181062825521); (6.25 : 18.8181062825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/SifMaster/SifMaster_SifDetail" />
+      <nodes>
+        <classShapeMoniker Id="7984e93c-9d3b-4edf-b728-b996945de1df" />
+        <classShapeMoniker Id="23410de5-4bf8-49e7-be6d-4ae2b48db8f8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 17.9963854980469); (3.5 : 17.9963854980469)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFMaster/PAFMaster_SifMaster" />
+      <nodes>
+        <classShapeMoniker Id="8ed23086-a715-49f7-b52c-5d04768dc661" />
+        <classShapeMoniker Id="7984e93c-9d3b-4edf-b728-b996945de1df" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 17.1450512695313); (9 : 17.1450512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/SifDetail/SifDetail_SIFNAKDetail" />
+      <nodes>
+        <classShapeMoniker Id="23410de5-4bf8-49e7-be6d-4ae2b48db8f8" />
+        <classShapeMoniker Id="748a11bf-d96b-464c-ab6a-c5a504640c2b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 17.34375); (17.0416666666667 : 17.34375 : JumpStart); (17.2083333333333 : 17.34375 : JumpEnd); (17.5 : 17.34375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFDetail/PAFDetail_TopUpRequest" />
+      <nodes>
+        <classShapeMoniker Id="4f535811-2db5-449f-b50e-5dd128c1d8af" />
+        <classShapeMoniker Id="097fe570-22c7-4bfd-a1de-ee2a8e65dd63" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.218748 : 14.875); (1.218748 : 14.75); (14.25 : 14.75); (14.25 : 17); (17.125 : 17); (17.125 : 18.6943289856771); (17.5 : 18.6943289856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WPSDataContext/PAFMaster/PAFMaster_TopUpRequest" />
+      <nodes>
+        <classShapeMoniker Id="8ed23086-a715-49f7-b52c-5d04768dc661" />
+        <classShapeMoniker Id="097fe570-22c7-4bfd-a1de-ee2a8e65dd63" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7adb4de6-666f-4ac0-a53d-69a0927fdb7d" absoluteBounds="6.5, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WPSDataContext/WPS_RTC_Returncode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53eb7aff-824b-4288-8642-add5577936f4" absoluteBounds="6.5150000000000006, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5f24e333-85f9-4614-bedd-4d236499563b" absoluteBounds="0.875, 1, 2, 3.1170068359375">
+      <DataClassMoniker Name="/WPSDataContext/RTC_Master" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce2ba626-d965-48fb-9792-4d11e2444e7b" absoluteBounds="0.88999999999999968, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 2.36620198567708); (3.5 : 2.36620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WPSDataContext/RTC_Master/RTC_Master_RTC_Detail" />
+      <nodes>
+        <classShapeMoniker Id="5f24e333-85f9-4614-bedd-4d236499563b" />
+        <classShapeMoniker Id="324a0268-2116-456f-823d-fc2b0b3ca3a3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

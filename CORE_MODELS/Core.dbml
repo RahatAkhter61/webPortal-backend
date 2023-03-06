@@ -1,0 +1,1426 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CoreDb" Class="CoreDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=20.74.167.235,1433;Initial Catalog=CoreDb;User ID=waqas" SettingsObjectName="CORE_MODELS.Properties.Settings" SettingsPropertyName="CoreDbConnectionString7" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SMIM_Rights_ST" Member="SMIM_Rights_STs">
+    <Type Name="SMIM_Rights_ST">
+      <Column Name="RightId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RightName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FormName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Association Name="SMIM_Rights_ST_SMIM_Menu_ST" Member="SMIM_Menu_STs" ThisKey="RightId" OtherKey="RightId" Type="SMIM_Menu_ST" />
+      <Association Name="SMIM_Rights_ST_SMIM_Menu_ST1" Member="SMIM_Menu_STs1" ThisKey="RightId" OtherKey="RightId" Type="SMIM_Menu_ST" />
+      <Association Name="SMIM_Rights_ST_SMIM_AssignRoles_ST" Member="SMIM_AssignRoles_STs" ThisKey="RightId" OtherKey="RightId" Type="SMIM_AssignRoles_ST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMIM_Roles_ST" Member="SMIM_Roles_STs">
+    <Type Name="SMIM_Roles_ST">
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="SMIM_Roles_ST_SMIM_AssignRoles_ST" Member="SMIM_AssignRoles_STs" ThisKey="RoleId" OtherKey="RoleId" Type="SMIM_AssignRoles_ST" />
+      <Association Name="SMIM_Roles_ST_SMIM_UserMst_ST" Member="SMIM_UserMst_STs" ThisKey="RoleId" OtherKey="RoleId" Type="SMIM_UserMst_ST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMIM_Menu_ST" Member="SMIM_Menu_STs">
+    <Type Name="SMIM_Menu_ST">
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentMenuId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MenuType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="MenuDescription" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IconPath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MenuSeq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="urlPath" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DefaultValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RightId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMIM_Rights_ST_SMIM_Menu_ST" Member="SMIM_Rights_ST" ThisKey="RightId" OtherKey="RightId" Type="SMIM_Rights_ST" IsForeignKey="true" />
+      <Association Name="SMIM_Rights_ST_SMIM_Menu_ST1" Member="SMIM_Rights_ST1" ThisKey="RightId" OtherKey="RightId" Type="SMIM_Rights_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_Stations_ST" Member="SMAM_Stations_STs">
+    <Type Name="SMAM_Stations_ST">
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StationName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StationType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StateID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ZipCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FaxNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SMAM_Stations_ST_SMAM_Departments_ST" Member="SMAM_Departments_STs" ThisKey="StationId" OtherKey="StationId" Type="SMAM_Departments_ST" />
+      <Association Name="SMAM_Stations_ST_HRMS_Positions_ST" Member="HRMS_Positions_STs" ThisKey="StationId" OtherKey="StationId" Type="HRMS_Positions_ST" />
+      <Association Name="SMAM_States_ST_SMAM_Stations_ST" Member="SMAM_States_ST" ThisKey="StateID" OtherKey="StateId" Type="SMAM_States_ST" IsForeignKey="true" />
+      <Association Name="SMAM_Country_ST_SMAM_Stations_ST" Member="SMAM_Country_ST" ThisKey="CountryID" OtherKey="CountryId" Type="SMAM_Country_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_Stations_ST" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_States_ST" Member="SMAM_States_STs">
+    <Type Name="SMAM_States_ST">
+      <Column Name="StateId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StateName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_States_ST_SMAM_Stations_ST" Member="SMAM_Stations_STs" ThisKey="StateId" OtherKey="StateID" Type="SMAM_Stations_ST" />
+      <Association Name="SMAM_States_ST_SMAM_Camp_ST" Member="SMAM_Camp_STs" ThisKey="StateId" OtherKey="StateId" Type="SMAM_Camp_ST" />
+      <Association Name="SMAM_States_ST_SMAM_CompanyMst_ST" Member="SMAM_CompanyMst_STs" ThisKey="StateId" OtherKey="StateId" Type="SMAM_CompanyMst_ST" />
+      <Association Name="SMAM_Country_ST_SMAM_States_ST" Member="SMAM_Country_ST" ThisKey="CountryId" OtherKey="CountryId" Type="SMAM_Country_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_SalesAccounts_ST" Member="SMAM_SalesAccounts_STs">
+    <Type Name="SMAM_SalesAccounts_ST">
+      <Column Name="SalesAccountId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SMAM_SalesAccounts_ST_SMAM_CompanyMst_ST" Member="SMAM_CompanyMst_STs" ThisKey="SalesAccountId" OtherKey="SalesAccountId" Type="SMAM_CompanyMst_ST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_Documents_ST" Member="SMAM_Documents_STs">
+    <Type Name="SMAM_Documents_ST">
+      <Column Name="DocId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DocType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SMAM_Documents_ST_HRMS_EmpDocs_ST" Member="HRMS_EmpDocs_STs" ThisKey="DocId" OtherKey="DocId" Type="HRMS_EmpDocs_ST" />
+      <Association Name="SMAM_Documents_ST_CifDocument" Member="CifDocuments" ThisKey="DocId" OtherKey="DocumentId" Type="CifDocument" />
+      <Association Name="SMAM_Documents_ST_SMAM_CompanyDocs_ST" Member="SMAM_CompanyDocs_STs" ThisKey="DocId" OtherKey="DocId" Type="SMAM_CompanyDocs_ST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_Country_ST" Member="SMAM_Country_STs">
+    <Type Name="SMAM_Country_ST">
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="SMAM_Country_ST_SMAM_Stations_ST" Member="SMAM_Stations_STs" ThisKey="CountryId" OtherKey="CountryID" Type="SMAM_Stations_ST" />
+      <Association Name="SMAM_Country_ST_SMAM_States_ST" Member="SMAM_States_STs" ThisKey="CountryId" OtherKey="CountryId" Type="SMAM_States_ST" />
+      <Association Name="SMAM_Country_ST_SMAM_Camp_ST" Member="SMAM_Camp_STs" ThisKey="CountryId" OtherKey="CountryId" Type="SMAM_Camp_ST" />
+      <Association Name="SMAM_Country_ST_HRMS_Nationality_ST" Member="HRMS_Nationality_STs" ThisKey="CountryId" OtherKey="CountryId" Type="HRMS_Nationality_ST" />
+      <Association Name="SMAM_Country_ST_SMAM_CompanyMst_ST" Member="SMAM_CompanyMst_STs" ThisKey="CountryId" OtherKey="CountryId" Type="SMAM_CompanyMst_ST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_Departments_ST" Member="SMAM_Departments_STs">
+    <Type Name="SMAM_Departments_ST">
+      <Column Name="DeptId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SMAM_Departments_ST_HRMS_Positions_ST" Member="HRMS_Positions_STs" ThisKey="DeptId" OtherKey="DeptId" Type="HRMS_Positions_ST" />
+      <Association Name="SMAM_Stations_ST_SMAM_Departments_ST" Member="SMAM_Stations_ST" ThisKey="StationId" OtherKey="StationId" Type="SMAM_Stations_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CmpStatus_ST" Member="SMAM_CmpStatus_STs">
+    <Type Name="SMAM_CmpStatus_ST">
+      <Column Name="CmpStatusId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="SMAM_CmpStatus_ST_SMAM_CompanyMst_ST" Member="SMAM_CompanyMst_STs" ThisKey="CmpStatusId" OtherKey="CmpStatusId" Type="SMAM_CompanyMst_ST" />
+      <Association Name="SMAM_CmpStatus_ST_SMAM_CompanyBatchDtl_HI" Member="SMAM_CompanyBatchDtl_HIs" ThisKey="CmpStatusId" OtherKey="StatusId" Type="SMAM_CompanyBatchDtl_HI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_Camp_ST" Member="SMAM_Camp_STs">
+    <Type Name="SMAM_Camp_ST">
+      <Column Name="CampId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SMAM_Camp_ST_SMAM_CampEmp_ST" Member="SMAM_CampEmp_STs" ThisKey="CampId" OtherKey="CampId" Type="SMAM_CampEmp_ST" />
+      <Association Name="SMAM_Country_ST_SMAM_Camp_ST" Member="SMAM_Country_ST" ThisKey="CountryId" OtherKey="CountryId" Type="SMAM_Country_ST" IsForeignKey="true" />
+      <Association Name="SMAM_States_ST_SMAM_Camp_ST" Member="SMAM_States_ST" ThisKey="StateId" OtherKey="StateId" Type="SMAM_States_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_Camp_ST" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_Banks_ST" Member="SMAM_Banks_STs">
+    <Type Name="SMAM_Banks_ST">
+      <Column Name="BankId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoutingCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRPR_SifMaster_TR" Member="HRPR_SifMaster_TRs">
+    <Type Name="HRPR_SifMaster_TR">
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SifId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SifDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="TotalEmployees" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalSalary" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="HRPR_SifMaster_TR_HRPR_SifDetail_TR" Member="HRPR_SifDetail_TRs" ThisKey="SifId" OtherKey="SifId" Type="HRPR_SifDetail_TR" />
+      <Association Name="HRPR_SifMaster_TR_HRPR_BulkSIFDetails_HI" Member="HRPR_BulkSIFDetails_HIs" ThisKey="SifId" OtherKey="SifId" Type="HRPR_BulkSIFDetails_HI" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_SifMaster_TR" Member="SMAM_CompanyMst_ST" ThisKey="CompanyID" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRPR_SifDetail_TR" Member="HRPR_SifDetail_TRs">
+    <Type Name="HRPR_SifDetail_TR">
+      <Column Name="SifDtlId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Basic" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="Allowances" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="NetSalary" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="LeaveDays" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="RoutingCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ProcessedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProcessedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VerifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VerifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="HRPR_SifMaster_TR_HRPR_SifDetail_TR" Member="HRPR_SifMaster_TR" ThisKey="SifId" OtherKey="SifId" Type="HRPR_SifMaster_TR" IsForeignKey="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRPR_SifDetail_TR" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_SifDetail_TR" Member="SMAM_CompanyMst_ST" ThisKey="CompanyID" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_Positions_ST" Member="HRMS_Positions_STs">
+    <Type Name="HRMS_Positions_ST">
+      <Column Name="PositionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeptId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TotalEmp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JobSkills" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="HRMS_Positions_ST_HRMS_EmpWorkStr_HI" Member="HRMS_EmpWorkStr_HIs" ThisKey="PositionId" OtherKey="PositionId" Type="HRMS_EmpWorkStr_HI" />
+      <Association Name="SMAM_Departments_ST_HRMS_Positions_ST" Member="SMAM_Departments_ST" ThisKey="DeptId" OtherKey="DeptId" Type="SMAM_Departments_ST" IsForeignKey="true" />
+      <Association Name="SMAM_Stations_ST_HRMS_Positions_ST" Member="SMAM_Stations_ST" ThisKey="StationId" OtherKey="StationId" Type="SMAM_Stations_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_HRMS_Positions_ST" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_Nationality_ST" Member="HRMS_Nationality_STs">
+    <Type Name="HRMS_Nationality_ST">
+      <Column Name="NationalityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_Country_ST_HRMS_Nationality_ST" Member="SMAM_Country_ST" ThisKey="CountryId" OtherKey="CountryId" Type="SMAM_Country_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmpWorkStr_HI" Member="HRMS_EmpWorkStr_HIs">
+    <Type Name="HRMS_EmpWorkStr_HI">
+      <Column Name="EmpWorkId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PositionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="HRMS_Positions_ST_HRMS_EmpWorkStr_HI" Member="HRMS_Positions_ST" ThisKey="PositionId" OtherKey="PositionId" Type="HRMS_Positions_ST" IsForeignKey="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpWorkStr_HI" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmpType_ST" Member="HRMS_EmpType_STs">
+    <Type Name="HRMS_EmpType_ST">
+      <Column Name="EmpTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmpStatus_ST" Member="HRMS_EmpStatus_STs">
+    <Type Name="HRMS_EmpStatus_ST">
+      <Column Name="EmpStatusId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmpCharges_ST" Member="HRMS_EmpCharges_STs">
+    <Type Name="HRMS_EmpCharges_ST">
+      <Column Name="EmpChrgId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChrgTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="FreqType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FreqValue" Type="System.Decimal" DbType="Decimal(9,1)" CanBeNull="true" />
+      <Column Name="EffFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpCharges_ST" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_ChargesType_ST_HRMS_EmpCharges_ST" Member="SMAM_ChargesType_ST" ThisKey="ChrgTypeId" OtherKey="ChrgTypeId" Type="SMAM_ChargesType_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmpAttendance_TR" Member="HRMS_EmpAttendance_TRs">
+    <Type Name="HRMS_EmpAttendance_TR">
+      <Column Name="EmpAttId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AttendDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Present" Type="System.Decimal" DbType="Decimal(9,1)" CanBeNull="true" />
+      <Column Name="Leaves" Type="System.Decimal" DbType="Decimal(9,1)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpAttendance_TR" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_HRMS_EmpAttendance_TR" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FNGL_AccountTransactions_HI" Member="FNGL_AccountTransactions_HIs">
+    <Type Name="FNGL_AccountTransactions_HI">
+      <Column Name="TransId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DebitAmount" Type="System.Decimal" DbType="Decimal(9,4)" CanBeNull="true" />
+      <Column Name="CreditAmount" Type="System.Decimal" DbType="Decimal(9,4)" CanBeNull="true" />
+      <Column Name="TransDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TransDesc" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TransReference" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SlipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmpSalary_ST" Member="HRMS_EmpSalary_STs">
+    <Type Name="HRMS_EmpSalary_ST">
+      <Column Name="EmpSalId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BasicSalary" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="Travel" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="Housing" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="Allowances" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="EffFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpSalary_ST" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMIM_AssignRoles_ST" Member="SMIM_AssignRoles_STs">
+    <Type Name="SMIM_AssignRoles_ST">
+      <Column Name="AccessId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RightId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Allow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SMIM_Rights_ST_SMIM_AssignRoles_ST" Member="SMIM_Rights_ST" ThisKey="RightId" OtherKey="RightId" Type="SMIM_Rights_ST" IsForeignKey="true" />
+      <Association Name="SMIM_Roles_ST_SMIM_AssignRoles_ST" Member="SMIM_Roles_ST" ThisKey="RoleId" OtherKey="RoleId" Type="SMIM_Roles_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CampEmp_ST" Member="SMAM_CampEmp_STs">
+    <Type Name="SMAM_CampEmp_ST">
+      <Column Name="CampEmpId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CampId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EffFrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EffTo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SMAM_Camp_ST_SMAM_CampEmp_ST" Member="SMAM_Camp_ST" ThisKey="CampId" OtherKey="CampId" Type="SMAM_Camp_ST" IsForeignKey="true" />
+      <Association Name="HRMS_EmployeeMst_ST_SMAM_CampEmp_ST" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_Products_ST" Member="SMAM_Products_STs">
+    <Type Name="SMAM_Products_ST">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CardProgramName" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CardPurchase" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Contactless" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Withdrawl" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Apptransaction" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="SMAM_Products_ST_SMAM_CompanyProducts_ST" Member="SMAM_CompanyProducts_STs" ThisKey="ProductId" OtherKey="ProductId" Type="SMAM_CompanyProducts_ST" />
+      <Association Name="SMAM_Products_ST_SMAM_CompanyCharges_ST" Member="SMAM_CompanyCharges_STs" ThisKey="ProductId" OtherKey="ProductId" Type="SMAM_CompanyCharges_ST" />
+      <Association Name="SMAM_Products_ST_ManualChargesDetail" Member="ManualChargesDetails" ThisKey="ProductId" OtherKey="ProductId" Type="ManualChargesDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_OTP_HI" Member="SMAM_OTP_HIs">
+    <Type Name="SMAM_OTP_HI">
+      <Column Name="OTPId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OTP" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="OTPSendTo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="OTPPurpose" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="OTPSentOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OTPExpiredOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OPTVerifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResendTries" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GeneratedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_SMAM_OTP_HI" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmpDocs_ST" Member="HRMS_EmpDocs_STs">
+    <Type Name="HRMS_EmpDocs_ST">
+      <Column Name="EmpDocID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocPath" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DocNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SMAM_Documents_ST_HRMS_EmpDocs_ST" Member="SMAM_Documents_ST" ThisKey="DocId" OtherKey="DocId" Type="SMAM_Documents_ST" IsForeignKey="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpDocs_ST" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAL_Alerts_ST" Member="SMAL_Alerts_STs">
+    <Type Name="SMAL_Alerts_ST">
+      <Column Name="AlertId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SMSBody" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmailBody" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="SMAL_Alerts_ST_SMAL_AlertQueue_HI" Member="SMAL_AlertQueue_HIs" ThisKey="AlertId" OtherKey="AlertId" Type="SMAL_AlertQueue_HI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_USPExport_HI" Member="HRMS_USPExport_HIs">
+    <Type Name="HRMS_USPExport_HI">
+      <Column Name="ExportId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WalletId" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CardProgramName" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CardPurchase" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Contactless" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Withdrawl" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Apptransaction" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CardId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SentToUSP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SentOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BatchId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardPrintedBatch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardPrintedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CardCollectedBatch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardCollectedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CardCollectedBy" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CardAssignToExecBatch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardAssignToExec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardAssignToExecOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CardDeliveredBatch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardDeliveredOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CardDeliveredStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AgreeTerms" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AutoDelivery" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SALES_DealStageMaster" Member="SALES_DealStageMasters">
+    <Type Name="SALES_DealStageMaster">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StageCategory" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Createdon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SALES_DealComment" Member="SALES_DealComments">
+    <Type Name="SALES_DealComment">
+      <Column Name="CommentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MeetingDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DealStage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifyon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SALES_DealCompany_SALES_DealComment" Member="SALES_DealCompany" ThisKey="CompanyId" OtherKey="CompanyId" Type="SALES_DealCompany" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SALES_DealCompany" Member="SALES_DealCompanies">
+    <Type Name="SALES_DealCompany">
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ContactNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="PotentialAccount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifyon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SALES_DealCompany_SALES_DealComment" Member="SALES_DealComments" ThisKey="CompanyId" OtherKey="CompanyId" Type="SALES_DealComment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_UpdateMobileNoValidation_Log" Member="HRMS_UpdateMobileNoValidation_Logs">
+    <Type Name="HRMS_UpdateMobileNoValidation_Log">
+      <Column Name="LogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NewMobNo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="OldMobNo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PCMS_Cashload_Detail" Member="PCMS_Cashload_Details">
+    <Type Name="PCMS_Cashload_Detail">
+      <Column Name="CashloadDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PersonalNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WalletId" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CashloadMasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PCMS_Cashload_Master_PCMS_Cashload_Detail" Member="PCMS_Cashload_Master" ThisKey="CashloadMasterId" OtherKey="CashloadMasterId" Type="PCMS_Cashload_Master" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EMPGUID_NEW" Member="HRMS_EMPGUID_NEWs">
+    <Type Name="HRMS_EMPGUID_NEW">
+      <Column Name="CusId" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SeqNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustId" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRPR_BulkSIFDetails_HI" Member="HRPR_BulkSIFDetails_HIs">
+    <Type Name="HRPR_BulkSIFDetails_HI">
+      <Column Name="TSifDtlID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UploadId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Month" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstId" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="RoutingCode" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="EmpName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PersonalNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LeaveDays" Type="System.Decimal" DbType="Decimal(9,1)" CanBeNull="true" />
+      <Column Name="FixAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VariableAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Exported" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExportedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SIFGenerated" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SIFGeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsValid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ImportedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImportedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TFileId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HRPR_SifMaster_TR_HRPR_BulkSIFDetails_HI" Member="HRPR_SifMaster_TR" ThisKey="SifId" OtherKey="SifId" Type="HRPR_SifMaster_TR" IsForeignKey="true" />
+      <Association Name="HRPR_BulkSIFFiles_HI_HRPR_BulkSIFDetails_HI" Member="HRPR_BulkSIFFiles_HI" ThisKey="TFileId" OtherKey="TFileID" Type="HRPR_BulkSIFFiles_HI" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_BulkSIFDetails_HI" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMIM_UserMst_ST" Member="SMIM_UserMst_STs">
+    <Type Name="SMIM_UserMst_ST">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="ContactNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="LoginDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMIM_UserMst_ST_CompanyTransferOfFund" Member="CompanyTransferOfFunds" ThisKey="UserId" OtherKey="CreatedBy" Type="CompanyTransferOfFund" />
+      <Association Name="SMIM_UserMst_ST_CompanyChargesHistory" Member="CompanyChargesHistories" ThisKey="UserId" OtherKey="UpdatedBy" Type="CompanyChargesHistory" />
+      <Association Name="SMIM_UserMst_ST_AdditionalCharge" Member="AdditionalCharges" ThisKey="UserId" OtherKey="CreatedBy" Type="AdditionalCharge" />
+      <Association Name="SMIM_UserMst_ST_EscrowLedger" Member="EscrowLedgers" ThisKey="UserId" OtherKey="CreatedBy" Type="EscrowLedger" />
+      <Association Name="SMIM_UserMst_ST_CiffStatusTracking" Member="CiffStatusTrackings" ThisKey="UserId" OtherKey="ChangeBy" Type="CiffStatusTracking" />
+      <Association Name="SMIM_UserMst_ST_CifDocument" Member="CifDocuments" ThisKey="UserId" OtherKey="CreatedBy" Type="CifDocument" />
+      <Association Name="SMIM_UserMst_ST_CifDocument1" Member="CifDocuments1" ThisKey="UserId" OtherKey="ModifiedBy" Type="CifDocument" />
+      <Association Name="SMIM_UserMst_ST_CompanyLoanBracket" Member="CompanyLoanBrackets" ThisKey="UserId" OtherKey="CreatedBy" Type="CompanyLoanBracket" />
+      <Association Name="SMIM_Roles_ST_SMIM_UserMst_ST" Member="SMIM_Roles_ST" ThisKey="RoleId" OtherKey="RoleId" Type="SMIM_Roles_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_SMIM_UserMst_ST" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRPR_BulkSIFFiles_HI" Member="HRPR_BulkSIFFiles_HIs">
+    <Type Name="HRPR_BulkSIFFiles_HI">
+      <Column Name="TFileID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UploadId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalEmployee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="HRPR_BulkSIFFiles_HI_HRPR_BulkSIFDetails_HI" Member="HRPR_BulkSIFDetails_HIs" ThisKey="TFileID" OtherKey="TFileId" Type="HRPR_BulkSIFDetails_HI" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_BulkSIFFiles_HI" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PCMS_FeeCharges" Member="PCMS_FeeCharges">
+    <Type Name="PCMS_FeeCharge">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FixAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Vat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[From]" Member="From" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MasterCharge" Member="MasterCharges">
+    <Type Name="MasterCharge">
+      <Column Name="MstChargeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="MasterCharge_ChargeType" Member="ChargeTypes" ThisKey="MstChargeId" OtherKey="MstChargeId" Type="ChargeType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChargeType" Member="ChargeTypes">
+    <Type Name="ChargeType">
+      <Column Name="ChargeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FixAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Vat" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="[From]" Member="From" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MstChargeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MasterCharge_ChargeType" Member="MasterCharge" ThisKey="MstChargeId" OtherKey="MstChargeId" Type="MasterCharge" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MTP_Details" Member="MTP_Details">
+    <Type Name="MTP_Detail">
+      <Column Name="MTPDetailsId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MTPMasterId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ProductCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="WalletId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="MTP_Master_MTP_Detail" Member="MTP_Master" ThisKey="MTPMasterId" OtherKey="MTPMasterId" Type="MTP_Master" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MTP_Master" Member="MTP_Masters">
+    <Type Name="MTP_Master">
+      <Column Name="MTPMasterId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalRecords" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="MTP_Master_MTP_Detail" Member="MTP_Details" ThisKey="MTPMasterId" OtherKey="MTPMasterId" Type="MTP_Detail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CompanyEst_HI" Member="SMAM_CompanyEst_HIs">
+    <Type Name="SMAM_CompanyEst_HI">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Employer_ID" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Employer_Name" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Employer_Company_Active" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Employer_Bank_Account" Type="System.String" DbType="NVarChar(23)" CanBeNull="true" />
+      <Column Name="Employer_Mode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Employer_Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Employer_DetailReivew_Flag" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Employer_Emirate_Code" Type="System.Decimal" DbType="Decimal(13,0)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsGenerated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRPR_ExpSifDetail_TR" Member="HRPR_ExpSifDetail_TRs">
+    <Type Name="HRPR_ExpSifDetail_TR">
+      <Column Name="ExpSifDtlId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ExpSifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoutingCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Basic" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Allowances" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetSalary" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LeaveDays" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="IsExported" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ExportBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExportOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PersonalNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRPR_ExpSifDetail_TR" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="HRPR_ExportSIFFiles_HI_HRPR_ExpSifDetail_TR" Member="HRPR_ExportSIFFiles_HI" ThisKey="ExpSifId" OtherKey="ExpSifID" Type="HRPR_ExportSIFFiles_HI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PCMS_Status_CL" Member="PCMS_Status_CLs">
+    <Type Name="PCMS_Status_CL">
+      <Column Name="Statusid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CardOperationMaster" Member="CardOperationMasters">
+    <Type Name="CardOperationMaster">
+      <Column Name="COMasterId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalRecords" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Operation_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifyby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modifyon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CardOperationMaster_CardOperationDetail" Member="CardOperationDetails" ThisKey="COMasterId" OtherKey="COMasterId" Type="CardOperationDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CardOperationDetail" Member="CardOperationDetails">
+    <Type Name="CardOperationDetail">
+      <Column Name="CODetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COMasterId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CustomerId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WalletId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Operation_Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CardOperationMaster_CardOperationDetail" Member="CardOperationMaster" ThisKey="COMasterId" OtherKey="COMasterId" Type="CardOperationMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmployeeMst_ST" Member="HRMS_EmployeeMst_STs">
+    <Type Name="HRMS_EmployeeMst_ST">
+      <Column Name="EmpId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PersonalNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="EmpCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MotherName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ImgPath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DOJ" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaritalStatus" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EmpTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PositionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NationalityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BankId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="AltMobileNo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WorkAddress" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="WorkStateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WorkCountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WorkZipCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WorkPhoneNo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerId" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsArchive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRPR_SifDetail_TR" Member="HRPR_SifDetail_TRs" ThisKey="EmpId" OtherKey="EmpId" Type="HRPR_SifDetail_TR" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpWorkStr_HI" Member="HRMS_EmpWorkStr_HIs" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmpWorkStr_HI" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpCharges_ST" Member="HRMS_EmpCharges_STs" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmpCharges_ST" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpAttendance_TR" Member="HRMS_EmpAttendance_TRs" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmpAttendance_TR" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpSalary_ST" Member="HRMS_EmpSalary_STs" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmpSalary_ST" />
+      <Association Name="HRMS_EmployeeMst_ST_SMAM_CampEmp_ST" Member="SMAM_CampEmp_STs" ThisKey="EmpId" OtherKey="EmpId" Type="SMAM_CampEmp_ST" />
+      <Association Name="HRMS_EmployeeMst_ST_SMAM_OTP_HI" Member="SMAM_OTP_HIs" ThisKey="EmpId" OtherKey="EmpId" Type="SMAM_OTP_HI" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpDocs_ST" Member="HRMS_EmpDocs_STs" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmpDocs_ST" />
+      <Association Name="HRMS_EmployeeMst_ST_HRPR_ExpSifDetail_TR" Member="HRPR_ExpSifDetail_TRs" ThisKey="EmpId" OtherKey="EmpId" Type="HRPR_ExpSifDetail_TR" />
+      <Association Name="HRMS_EmployeeMst_ST_CifEmployeeLinking" Member="CifEmployeeLinkings" ThisKey="EmpId" OtherKey="EmplId" Type="CifEmployeeLinking" />
+      <Association Name="HRMS_EmployeeMst_ST_FNGL_Transactions_HI" Member="FNGL_Transactions_HIs" ThisKey="EmpId" OtherKey="EmpId" Type="FNGL_Transactions_HI" />
+      <Association Name="HRMS_EmployeeMst_ST_AdvanceSalary" Member="AdvanceSalaries" ThisKey="EmpId" OtherKey="EmpId" Type="AdvanceSalary" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpWhitelisting" Member="HRMS_EmpWhitelistings" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmpWhitelisting" />
+      <Association Name="HRMS_EmployeeMst_ST_SMAL_AlertQueue_HI" Member="SMAL_AlertQueue_HIs" ThisKey="EmpId" OtherKey="EmpId" Type="SMAL_AlertQueue_HI" />
+      <Association Name="SMAM_CompanyMst_ST_HRMS_EmployeeMst_ST" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CompanyProducts_ST" Member="SMAM_CompanyProducts_STs">
+    <Type Name="SMAM_CompanyProducts_ST">
+      <Column Name="CmpProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EffFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PCIFGenerated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PCIFBatch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PCIFGeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ProductCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PCIFStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PCIFDescription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="SMAM_Products_ST_SMAM_CompanyProducts_ST" Member="SMAM_Products_ST" ThisKey="ProductId" OtherKey="ProductId" Type="SMAM_Products_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyProducts_ST" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CompanyMst_ST" Member="SMAM_CompanyMst_STs">
+    <Type Name="SMAM_CompanyMst_ST">
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SalesAccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EstId" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LoginId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CmpStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BusinessName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="BuildingNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MailBuildingNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MailAddress" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MailStateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MailCountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MailZipCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LegalStructure" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CustomerId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsMigratedCompany" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PayRollId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isFreeZone" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isMigrated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isSMSRequired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ParentCompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_Stations_ST" Member="SMAM_Stations_STs" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_Stations_ST" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_Camp_ST" Member="SMAM_Camp_STs" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_Camp_ST" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_SifMaster_TR" Member="HRPR_SifMaster_TRs" ThisKey="CompanyId" OtherKey="CompanyID" Type="HRPR_SifMaster_TR" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_SifDetail_TR" Member="HRPR_SifDetail_TRs" ThisKey="CompanyId" OtherKey="CompanyID" Type="HRPR_SifDetail_TR" />
+      <Association Name="SMAM_CompanyMst_ST_HRMS_Positions_ST" Member="HRMS_Positions_STs" ThisKey="CompanyId" OtherKey="CompanyId" Type="HRMS_Positions_ST" />
+      <Association Name="SMAM_CompanyMst_ST_HRMS_EmpAttendance_TR" Member="HRMS_EmpAttendance_TRs" ThisKey="CompanyId" OtherKey="CompanyId" Type="HRMS_EmpAttendance_TR" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_BulkSIFDetails_HI" Member="HRPR_BulkSIFDetails_HIs" ThisKey="CompanyId" OtherKey="CompanyId" Type="HRPR_BulkSIFDetails_HI" />
+      <Association Name="SMAM_CompanyMst_ST_SMIM_UserMst_ST" Member="SMIM_UserMst_STs" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMIM_UserMst_ST" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_BulkSIFFiles_HI" Member="HRPR_BulkSIFFiles_HIs" ThisKey="CompanyId" OtherKey="CompanyId" Type="HRPR_BulkSIFFiles_HI" />
+      <Association Name="SMAM_CompanyMst_ST_HRMS_EmployeeMst_ST" Member="HRMS_EmployeeMst_STs" ThisKey="CompanyId" OtherKey="CompanyId" Type="HRMS_EmployeeMst_ST" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyProducts_ST" Member="SMAM_CompanyProducts_STs" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyProducts_ST" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyMst_ST" Member="SMAM_CompanyMst_STs" ThisKey="CompanyId" OtherKey="ParentCompanyId" Type="SMAM_CompanyMst_ST" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyCharges_ST" Member="SMAM_CompanyCharges_STs" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyCharges_ST" />
+      <Association Name="SMAM_CompanyMst_ST_CompanyTransferOfFund" Member="CompanyTransferOfFunds" ThisKey="CompanyId" OtherKey="CompanyId" Type="CompanyTransferOfFund" />
+      <Association Name="SMAM_CompanyMst_ST_CompanyTransferOfFund1" Member="CompanyTransferOfFunds1" ThisKey="CompanyId" OtherKey="ToCompanyId" Type="CompanyTransferOfFund" />
+      <Association Name="SMAM_CompanyMst_ST_EscrowLedger" Member="EscrowLedgers" ThisKey="CompanyId" OtherKey="CompanyId" Type="EscrowLedger" />
+      <Association Name="SMAM_CompanyMst_ST_CifCompanyLinking" Member="CifCompanyLinkings" ThisKey="CompanyId" OtherKey="CompnayId" Type="CifCompanyLinking" />
+      <Association Name="SMAM_CompanyMst_ST_FNGL_Transactions_HI" Member="FNGL_Transactions_HIs" ThisKey="CompanyId" OtherKey="CompanyId" Type="FNGL_Transactions_HI" />
+      <Association Name="SMAM_CompanyMst_ST_AdvanceSalary" Member="AdvanceSalaries" ThisKey="CompanyId" OtherKey="CompanyId" Type="AdvanceSalary" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyWhitelisting" Member="SMAM_CompanyWhitelistings" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyWhitelisting" />
+      <Association Name="SMAM_CompanyMst_ST_CompanyLoanBracket" Member="CompanyLoanBrackets" ThisKey="CompanyId" OtherKey="CompanyId" Type="CompanyLoanBracket" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_DepositSlip_TR" Member="HRPR_DepositSlip_TRs" ThisKey="CompanyId" OtherKey="CompanyId" Type="HRPR_DepositSlip_TR" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyBatchDtl_HI" Member="SMAM_CompanyBatchDtl_HIs" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyBatchDtl_HI" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyDocs_ST" Member="SMAM_CompanyDocs_STs" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyDocs_ST" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_ExportSIFFiles_HI" Member="HRPR_ExportSIFFiles_HIs" ThisKey="CompanyId" OtherKey="CompanyId" Type="HRPR_ExportSIFFiles_HI" />
+      <Association Name="SMAM_CompanyMst_ST_HRMS_EmpWhitelisting" Member="HRMS_EmpWhitelistings" ThisKey="CompanyId" OtherKey="CompanyId" Type="HRMS_EmpWhitelisting" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyMst_ST" Member="SMAM_CompanyMst_ST1" ThisKey="ParentCompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CmpStatus_ST_SMAM_CompanyMst_ST" Member="SMAM_CmpStatus_ST" ThisKey="CmpStatusId" OtherKey="CmpStatusId" Type="SMAM_CmpStatus_ST" IsForeignKey="true" />
+      <Association Name="SMAM_Country_ST_SMAM_CompanyMst_ST" Member="SMAM_Country_ST" ThisKey="CountryId" OtherKey="CountryId" Type="SMAM_Country_ST" IsForeignKey="true" />
+      <Association Name="SMAM_SalesAccounts_ST_SMAM_CompanyMst_ST" Member="SMAM_SalesAccounts_ST" ThisKey="SalesAccountId" OtherKey="SalesAccountId" Type="SMAM_SalesAccounts_ST" IsForeignKey="true" />
+      <Association Name="SMAM_States_ST_SMAM_CompanyMst_ST" Member="SMAM_States_ST" ThisKey="StateId" OtherKey="StateId" Type="SMAM_States_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CompanyCharges_ST" Member="SMAM_CompanyCharges_STs">
+    <Type Name="SMAM_CompanyCharges_ST">
+      <Column Name="CmpChrgId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChrgTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="EffFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_CompanyCharges_ST_CompanyChargesHistory" Member="CompanyChargesHistories" ThisKey="CmpChrgId" OtherKey="CompanyChargeId" Type="CompanyChargesHistory" />
+      <Association Name="SMAM_CompanyCharges_ST_AdditionalCharge" Member="AdditionalCharges" ThisKey="CmpChrgId" OtherKey="CompanyChargeId" Type="AdditionalCharge" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyCharges_ST" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_Products_ST_SMAM_CompanyCharges_ST" Member="SMAM_Products_ST" ThisKey="ProductId" OtherKey="ProductId" Type="SMAM_Products_ST" IsForeignKey="true" />
+      <Association Name="SMAM_ChargesType_ST_SMAM_CompanyCharges_ST" Member="SMAM_ChargesType_ST" ThisKey="ChrgTypeId" OtherKey="ChrgTypeId" Type="SMAM_ChargesType_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyTransferOfFunds" Member="CompanyTransferOfFunds">
+    <Type Name="CompanyTransferOfFund">
+      <Column Name="TransferId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ToCompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransferAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CompanyTransferOfFund_FNGL_Transactions_HI" Member="FNGL_Transactions_HIs" ThisKey="TransferId" OtherKey="TransferId" Type="FNGL_Transactions_HI" />
+      <Association Name="SMAM_CompanyMst_ST_CompanyTransferOfFund" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="SMIM_UserMst_ST_CompanyTransferOfFund" Member="SMIM_UserMst_ST" ThisKey="CreatedBy" OtherKey="UserId" Type="SMIM_UserMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_CompanyTransferOfFund1" Member="SMAM_CompanyMst_ST1" ThisKey="ToCompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyChargesHistory" Member="CompanyChargesHistories">
+    <Type Name="CompanyChargesHistory">
+      <Column Name="ChargeHistoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OldCharges" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NewCharges" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="EffectiveFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffectiveTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CompanyChargeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_CompanyCharges_ST_CompanyChargesHistory" Member="SMAM_CompanyCharges_ST" ThisKey="CompanyChargeId" OtherKey="CmpChrgId" Type="SMAM_CompanyCharges_ST" IsForeignKey="true" />
+      <Association Name="SMIM_UserMst_ST_CompanyChargesHistory" Member="SMIM_UserMst_ST" ThisKey="UpdatedBy" OtherKey="UserId" Type="SMIM_UserMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdditionalCharges" Member="AdditionalCharges">
+    <Type Name="AdditionalCharge">
+      <Column Name="ChargeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyChargeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsDeducted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TransactionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VatAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="VatPercentage" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="AdditionalCharge_ManualChargesDetail" Member="ManualChargesDetails" ThisKey="ChargeId" OtherKey="AdditionalChargeId" Type="ManualChargesDetail" />
+      <Association Name="SMAM_CompanyCharges_ST_AdditionalCharge" Member="SMAM_CompanyCharges_ST" ThisKey="CompanyChargeId" OtherKey="CmpChrgId" Type="SMAM_CompanyCharges_ST" IsForeignKey="true" />
+      <Association Name="SMIM_UserMst_ST_AdditionalCharge" Member="SMIM_UserMst_ST" ThisKey="CreatedBy" OtherKey="UserId" Type="SMIM_UserMst_ST" IsForeignKey="true" />
+      <Association Name="FNGL_Transactions_HI_AdditionalCharge" Member="FNGL_Transactions_HI" ThisKey="TransactionId" OtherKey="TransId" Type="FNGL_Transactions_HI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EscrowLedger" Member="EscrowLedgers">
+    <Type Name="EscrowLedger">
+      <Column Name="EscrowId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransactionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_CompanyMst_ST_EscrowLedger" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="SMIM_UserMst_ST_EscrowLedger" Member="SMIM_UserMst_ST" ThisKey="CreatedBy" OtherKey="UserId" Type="SMIM_UserMst_ST" IsForeignKey="true" />
+      <Association Name="Status_EscrowLedger" Member="Status" ThisKey="StatusId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+      <Association Name="FNGL_Transactions_HI_EscrowLedger" Member="FNGL_Transactions_HI" ThisKey="TransactionId" OtherKey="TransId" Type="FNGL_Transactions_HI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Status" Member="Status">
+    <Type Name="Status">
+      <Column Name="StatusId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Status_EscrowLedger" Member="EscrowLedgers" ThisKey="StatusId" OtherKey="StatusId" Type="EscrowLedger" />
+      <Association Name="Status_AdvanceSalaryStatustracking" Member="AdvanceSalaryStatustrackings" ThisKey="StatusId" OtherKey="StatusId" Type="AdvanceSalaryStatustracking" />
+      <Association Name="Status_AdvanceSalaryDetail" Member="AdvanceSalaryDetails" ThisKey="StatusId" OtherKey="TypeId" Type="AdvanceSalaryDetail" />
+      <Association Name="Status_AdvanceSalaryCharge" Member="AdvanceSalaryCharges" ThisKey="StatusId" OtherKey="AdvanceChargesStatusId" Type="AdvanceSalaryCharge" />
+      <Association Name="Status_AdvanceSalary" Member="AdvanceSalaries" ThisKey="StatusId" OtherKey="AdvanceStatusId" Type="AdvanceSalary" />
+      <Association Name="Status_AdvanceSalary1" Member="AdvanceSalaries1" ThisKey="StatusId" OtherKey="RecoveryStatus" Type="AdvanceSalary" />
+      <Association Name="Status_SMAM_CompanyWhitelisting" Member="SMAM_CompanyWhitelistings" ThisKey="StatusId" OtherKey="StatusId" Type="SMAM_CompanyWhitelisting" />
+      <Association Name="Status_HRPR_DepositSlip_TR" Member="HRPR_DepositSlip_TRs" ThisKey="StatusId" OtherKey="StatusId" Type="HRPR_DepositSlip_TR" />
+      <Association Name="Status_HRMS_EmpWhitelisting" Member="HRMS_EmpWhitelistings" ThisKey="StatusId" OtherKey="StatusId" Type="HRMS_EmpWhitelisting" />
+      <Association Name="Status_AdvanceSalaryDetailInfo" Member="AdvanceSalaryDetailInfos" ThisKey="StatusId" OtherKey="Purposeofloan" Type="AdvanceSalaryDetailInfo" />
+      <Association Name="Status_AdvanceSalaryDetailInfo1" Member="AdvanceSalaryDetailInfos1" ThisKey="StatusId" OtherKey="HomeVisitPlan" Type="AdvanceSalaryDetailInfo" />
+      <Association Name="Status_AdvanceSalaryDetailInfo2" Member="AdvanceSalaryDetailInfos2" ThisKey="StatusId" OtherKey="Jobleaving" Type="AdvanceSalaryDetailInfo" />
+      <Association Name="StatusType_Status" Member="StatusType" ThisKey="TypeId" OtherKey="StatustypeId" Type="StatusType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusTypes" Member="StatusTypes">
+    <Type Name="StatusType">
+      <Column Name="StatustypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="StatusType_Status" Member="Status" ThisKey="StatustypeId" OtherKey="TypeId" Type="Status" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SystemSettings" Member="SystemSettings">
+    <Type Name="SystemSetting">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CifStatus" Member="CifStatus">
+    <Type Name="CifStatus">
+      <Column Name="CifStatusId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="CifStatus_CiffStatusTracking" Member="CiffStatusTrackings" ThisKey="CifStatusId" OtherKey="NewStatus" Type="CiffStatusTracking" />
+      <Association Name="CifStatus_CiffStatusTracking1" Member="CiffStatusTrackings1" ThisKey="CifStatusId" OtherKey="OldStatus" Type="CiffStatusTracking" />
+      <Association Name="CifStatus_CifMaster" Member="CifMasters" ThisKey="CifStatusId" OtherKey="StatusId" Type="CifMaster" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CiffStatusTrackings" Member="CiffStatusTrackings">
+    <Type Name="CiffStatusTracking">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OldStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NewStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChangeAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChangeBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMIM_UserMst_ST_CiffStatusTracking" Member="SMIM_UserMst_ST" ThisKey="ChangeBy" OtherKey="UserId" Type="SMIM_UserMst_ST" IsForeignKey="true" />
+      <Association Name="CifStatus_CiffStatusTracking" Member="CifStatus" ThisKey="NewStatus" OtherKey="CifStatusId" Type="CifStatus" IsForeignKey="true" />
+      <Association Name="CifStatus_CiffStatusTracking1" Member="CifStatus1" ThisKey="OldStatus" OtherKey="CifStatusId" Type="CifStatus" IsForeignKey="true" />
+      <Association Name="CifMaster_CiffStatusTracking" Member="CifMaster" ThisKey="CifId" OtherKey="Id" Type="CifMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CifDocument" Member="CifDocuments">
+    <Type Name="CifDocument">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocumentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocumentPath" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="DocumentNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SMIM_UserMst_ST_CifDocument" Member="SMIM_UserMst_ST" ThisKey="CreatedBy" OtherKey="UserId" Type="SMIM_UserMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_Documents_ST_CifDocument" Member="SMAM_Documents_ST" ThisKey="DocumentId" OtherKey="DocId" Type="SMAM_Documents_ST" IsForeignKey="true" />
+      <Association Name="SMIM_UserMst_ST_CifDocument1" Member="SMIM_UserMst_ST1" ThisKey="ModifiedBy" OtherKey="UserId" Type="SMIM_UserMst_ST" IsForeignKey="true" />
+      <Association Name="CifMaster_CifDocument" Member="CifMaster" ThisKey="CifId" OtherKey="Id" Type="CifMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CifEmployeeLinkings" Member="CifEmployeeLinkings">
+    <Type Name="CifEmployeeLinking">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmplId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_CifEmployeeLinking" Member="HRMS_EmployeeMst_ST" ThisKey="EmplId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="CifMaster_CifEmployeeLinking" Member="CifMaster" ThisKey="CifId" OtherKey="Id" Type="CifMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CifCompanyLinkings" Member="CifCompanyLinkings">
+    <Type Name="CifCompanyLinking">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompnayId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_CompanyMst_ST_CifCompanyLinking" Member="SMAM_CompanyMst_ST" ThisKey="CompnayId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="CifMaster_CifCompanyLinking" Member="CifMaster" ThisKey="CifId" OtherKey="Id" Type="CifMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CifMaster" Member="CifMasters">
+    <Type Name="CifMaster">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CifNumber" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserCategoryCode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CifMaster_CiffStatusTracking" Member="CiffStatusTrackings" ThisKey="Id" OtherKey="CifId" Type="CiffStatusTracking" />
+      <Association Name="CifMaster_CifDocument" Member="CifDocuments" ThisKey="Id" OtherKey="CifId" Type="CifDocument" />
+      <Association Name="CifMaster_CifEmployeeLinking" Member="CifEmployeeLinkings" ThisKey="Id" OtherKey="CifId" Type="CifEmployeeLinking" />
+      <Association Name="CifMaster_CifCompanyLinking" Member="CifCompanyLinkings" ThisKey="Id" OtherKey="CifId" Type="CifCompanyLinking" />
+      <Association Name="CifStatus_CifMaster" Member="CifStatus" ThisKey="StatusId" OtherKey="CifStatusId" Type="CifStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="EmployeeEstablishmentLinkings">
+    <Type Name="EmployeeEstablishmentLinking">
+      <Column Name="EmpEstablismentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="EstablishmentNumber" Type="System.String" DbType="nvarchar(30)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_ChargesType_ST" Member="SMAM_ChargesType_STs">
+    <Type Name="SMAM_ChargesType_ST">
+      <Column Name="ChrgTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="SMAM_ChargesType_ST_HRMS_EmpCharges_ST" Member="HRMS_EmpCharges_STs" ThisKey="ChrgTypeId" OtherKey="ChrgTypeId" Type="HRMS_EmpCharges_ST" />
+      <Association Name="SMAM_ChargesType_ST_SMAM_CompanyCharges_ST" Member="SMAM_CompanyCharges_STs" ThisKey="ChrgTypeId" OtherKey="ChrgTypeId" Type="SMAM_CompanyCharges_ST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FNGL_Transactions_HI" Member="FNGL_Transactions_HIs">
+    <Type Name="FNGL_Transactions_HI">
+      <Column Name="TransId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DebitAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CreditAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TransDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TransDesc" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TransReference" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SlipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransferId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CashLoadId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="FNGL_Transactions_HI_AdditionalCharge" Member="AdditionalCharges" ThisKey="TransId" OtherKey="TransactionId" Type="AdditionalCharge" />
+      <Association Name="FNGL_Transactions_HI_EscrowLedger" Member="EscrowLedgers" ThisKey="TransId" OtherKey="TransactionId" Type="EscrowLedger" />
+      <Association Name="CompanyTransferOfFund_FNGL_Transactions_HI" Member="CompanyTransferOfFund" ThisKey="TransferId" OtherKey="TransferId" Type="CompanyTransferOfFund" IsForeignKey="true" />
+      <Association Name="HRMS_EmployeeMst_ST_FNGL_Transactions_HI" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_FNGL_Transactions_HI" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="FNGL_TransType_ST_FNGL_Transactions_HI" Member="FNGL_TransType_ST" ThisKey="TransTypeId" OtherKey="TransTypeId" Type="FNGL_TransType_ST" IsForeignKey="true" />
+      <Association Name="PCMS_Cashload_Master_FNGL_Transactions_HI" Member="PCMS_Cashload_Master" ThisKey="CashLoadId" OtherKey="CashloadMasterId" Type="PCMS_Cashload_Master" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ManualChargesDetail" Member="ManualChargesDetails">
+    <Type Name="ManualChargesDetail">
+      <Column Name="ManualChargesId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AdditionalChargeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="AdditionalCharge_ManualChargesDetail" Member="AdditionalCharge" ThisKey="AdditionalChargeId" OtherKey="ChargeId" Type="AdditionalCharge" IsForeignKey="true" />
+      <Association Name="SMAM_Products_ST_ManualChargesDetail" Member="SMAM_Products_ST" ThisKey="ProductId" OtherKey="ProductId" Type="SMAM_Products_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdvanceSalaryStatustracking" Member="AdvanceSalaryStatustrackings">
+    <Type Name="AdvanceSalaryStatustracking">
+      <Column Name="TrackingId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdvanceSalaryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Status_AdvanceSalaryStatustracking" Member="Status" ThisKey="StatusId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+      <Association Name="AdvanceSalary_AdvanceSalaryStatustracking" Member="AdvanceSalary" ThisKey="AdvanceSalaryId" OtherKey="AdvanceSalaryId" Type="AdvanceSalary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FNGL_ManualTransactionEmployee_HI" Member="FNGL_ManualTransactionEmployee_HIs">
+    <Type Name="FNGL_ManualTransactionEmployee_HI">
+      <Column Name="BulkId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BatchNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WalletId" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TransCode" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="SettlementType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TransRef" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="TransDate" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="TransTime" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Naration" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="FormattedAmount" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsLedgerAddded" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdvanceSalaryDetail" Member="AdvanceSalaryDetails">
+    <Type Name="AdvanceSalaryDetail">
+      <Column Name="AdvanceSalaryDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdvanceSalaryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DebitAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CreditAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JobStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransactionReferencenumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="TransactionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AdvanceSalaryDetail_AdvanceSalaryCharge" Member="AdvanceSalaryCharges" ThisKey="AdvanceSalaryDetailId" OtherKey="AdvanceSalaryDetailId" Type="AdvanceSalaryCharge" />
+      <Association Name="Status_AdvanceSalaryDetail" Member="Status" ThisKey="TypeId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+      <Association Name="AdvanceSalary_AdvanceSalaryDetail" Member="AdvanceSalary" ThisKey="AdvanceSalaryId" OtherKey="AdvanceSalaryId" Type="AdvanceSalary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdvanceSalaryCharges" Member="AdvanceSalaryCharges">
+    <Type Name="AdvanceSalaryCharge">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdvanceSalaryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdvanceChargesStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdvanceSalaryDetailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AdvanceSalaryDetail_AdvanceSalaryCharge" Member="AdvanceSalaryDetail" ThisKey="AdvanceSalaryDetailId" OtherKey="AdvanceSalaryDetailId" Type="AdvanceSalaryDetail" IsForeignKey="true" />
+      <Association Name="Status_AdvanceSalaryCharge" Member="Status" ThisKey="AdvanceChargesStatusId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+      <Association Name="AdvanceSalary_AdvanceSalaryCharge" Member="AdvanceSalary" ThisKey="AdvanceSalaryId" OtherKey="AdvanceSalaryId" Type="AdvanceSalary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdvanceSalary" Member="AdvanceSalaries">
+    <Type Name="AdvanceSalary">
+      <Column Name="AdvanceSalaryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RecoverAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="AdvanceStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecoveryStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsComplete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApprovalDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateOfDisbursement" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaidOnTime" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="lastRecievingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OtherLiabilities" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RefrencePhoneNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ReferenceContactPerson" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AverageSalary" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LastSalary" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LoanPayCompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsRecoverdJob" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KfsUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TermsUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LiabilityUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="AdvanceSalary_AdvanceSalaryStatustracking" Member="AdvanceSalaryStatustrackings" ThisKey="AdvanceSalaryId" OtherKey="AdvanceSalaryId" Type="AdvanceSalaryStatustracking" />
+      <Association Name="AdvanceSalary_AdvanceSalaryDetail" Member="AdvanceSalaryDetails" ThisKey="AdvanceSalaryId" OtherKey="AdvanceSalaryId" Type="AdvanceSalaryDetail" />
+      <Association Name="AdvanceSalary_AdvanceSalaryCharge" Member="AdvanceSalaryCharges" ThisKey="AdvanceSalaryId" OtherKey="AdvanceSalaryId" Type="AdvanceSalaryCharge" />
+      <Association Name="AdvanceSalary_AdvanceSalaryDetailInfo" Member="AdvanceSalaryDetailInfos" ThisKey="AdvanceSalaryId" OtherKey="AdvanceSalaryId" Type="AdvanceSalaryDetailInfo" />
+      <Association Name="Status_AdvanceSalary" Member="Status" ThisKey="AdvanceStatusId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_AdvanceSalary" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="HRMS_EmployeeMst_ST_AdvanceSalary" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="Status_AdvanceSalary1" Member="Status1" ThisKey="RecoveryStatus" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CompanyWhitelisting" Member="SMAM_CompanyWhitelistings">
+    <Type Name="SMAM_CompanyWhitelisting">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tmlStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyWhitelisting" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="Status_SMAM_CompanyWhitelisting" Member="Status" ThisKey="StatusId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyLoanBrackets" Member="CompanyLoanBrackets">
+    <Type Name="CompanyLoanBracket">
+      <Column Name="BracketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FromAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ToAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_CompanyMst_ST_CompanyLoanBracket" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="SMIM_UserMst_ST_CompanyLoanBracket" Member="SMIM_UserMst_ST" ThisKey="CreatedBy" OtherKey="UserId" Type="SMIM_UserMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRPR_DepositSlip_TR" Member="HRPR_DepositSlip_TRs">
+    <Type Name="HRPR_DepositSlip_TR">
+      <Column Name="SlipId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SlipNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ImgPath" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UploadedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UploadedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="SalaryAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ChargeAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_DepositSlip_TR" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="Status_HRPR_DepositSlip_TR" Member="Status" ThisKey="StatusId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CompanyBatch_HI" Member="SMAM_CompanyBatch_HIs">
+    <Type Name="SMAM_CompanyBatch_HI">
+      <Column Name="BatchId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BatchNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TotalCompanies" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SMAM_CompanyBatch_HI_SMAM_CompanyBatchDtl_HI" Member="SMAM_CompanyBatchDtl_HIs" ThisKey="BatchId" OtherKey="BatchId" Type="SMAM_CompanyBatchDtl_HI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CompanyBatchDtl_HI" Member="SMAM_CompanyBatchDtl_HIs">
+    <Type Name="SMAM_CompanyBatchDtl_HI">
+      <Column Name="BatchDtlId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BatchId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Association Name="SMAM_CmpStatus_ST_SMAM_CompanyBatchDtl_HI" Member="SMAM_CmpStatus_ST" ThisKey="StatusId" OtherKey="CmpStatusId" Type="SMAM_CmpStatus_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyBatch_HI_SMAM_CompanyBatchDtl_HI" Member="SMAM_CompanyBatch_HI" ThisKey="BatchId" OtherKey="BatchId" Type="SMAM_CompanyBatch_HI" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyBatchDtl_HI" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAM_CompanyDocs_ST" Member="SMAM_CompanyDocs_STs">
+    <Type Name="SMAM_CompanyDocs_ST">
+      <Column Name="CmpDocId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DocPath" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IssueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FileUrl" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="LicenseName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="SMAM_CompanyMst_ST_SMAM_CompanyDocs_ST" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_Documents_ST_SMAM_CompanyDocs_ST" Member="SMAM_Documents_ST" ThisKey="DocId" OtherKey="DocId" Type="SMAM_Documents_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRPR_ExportSIFFiles_HI" Member="HRPR_ExportSIFFiles_HIs">
+    <Type Name="HRPR_ExportSIFFiles_HI">
+      <Column Name="ExpSifID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalEmployees" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstId" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsGenerated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="SIF_Type" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Claimstatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="HRPR_ExportSIFFiles_HI_HRPR_ExpSifDetail_TR" Member="HRPR_ExpSifDetail_TRs" ThisKey="ExpSifID" OtherKey="ExpSifId" Type="HRPR_ExpSifDetail_TR" />
+      <Association Name="SMAM_CompanyMst_ST_HRPR_ExportSIFFiles_HI" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FNGL_TransType_ST" Member="FNGL_TransType_STs">
+    <Type Name="FNGL_TransType_ST">
+      <Column Name="TransTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransTypeDesc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TransCode" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="FNGL_TransType_ST_FNGL_Transactions_HI" Member="FNGL_Transactions_HIs" ThisKey="TransTypeId" OtherKey="TransTypeId" Type="FNGL_Transactions_HI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMS_EmpWhitelisting" Member="HRMS_EmpWhitelistings">
+    <Type Name="HRMS_EmpWhitelisting">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_HRMS_EmpWhitelisting" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="SMAM_CompanyMst_ST_HRMS_EmpWhitelisting" Member="SMAM_CompanyMst_ST" ThisKey="CompanyId" OtherKey="CompanyId" Type="SMAM_CompanyMst_ST" IsForeignKey="true" />
+      <Association Name="Status_HRMS_EmpWhitelisting" Member="Status" ThisKey="StatusId" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMAL_AlertQueue_HI" Member="SMAL_AlertQueue_HIs">
+    <Type Name="SMAL_AlertQueue_HI">
+      <Column Name="AlertLogId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AlertId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SendTo" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="TransId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SMSBody" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SentOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STAN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HRMS_EmployeeMst_ST_SMAL_AlertQueue_HI" Member="HRMS_EmployeeMst_ST" ThisKey="EmpId" OtherKey="EmpId" Type="HRMS_EmployeeMst_ST" IsForeignKey="true" />
+      <Association Name="SMAL_Alerts_ST_SMAL_AlertQueue_HI" Member="SMAL_Alerts_ST" ThisKey="AlertId" OtherKey="AlertId" Type="SMAL_Alerts_ST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PCMS_Cashload_Master" Member="PCMS_Cashload_Masters">
+    <Type Name="PCMS_Cashload_Master">
+      <Column Name="CashloadMasterId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Companyid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Productid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isfreezone" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TotalRecords" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Cardloadtype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Createdon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifyon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsFundtransfer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PCMS_Cashload_Master_PCMS_Cashload_Detail" Member="PCMS_Cashload_Details" ThisKey="CashloadMasterId" OtherKey="CashloadMasterId" Type="PCMS_Cashload_Detail" />
+      <Association Name="PCMS_Cashload_Master_FNGL_Transactions_HI" Member="FNGL_Transactions_HIs" ThisKey="CashloadMasterId" OtherKey="CashLoadId" Type="FNGL_Transactions_HI" />
+    </Type>
+  </Table>
+
+ <Table Name="dbo.AdvanceSalaryDetailInfo" Member="AdvanceSalaryDetailInfos">
+    <Type Name="AdvanceSalaryDetailInfo">
+      <Column Name="AdvanceSalarydtlinfoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Purposeofloan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HomeVisitPlan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Jobleaving" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="otherPurposeofloan" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="otherJobleaving" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneVerified" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReasonofRejection" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AdvanceSalaryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UaeReferenceName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UaeReferenceNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NameofSpouse" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CellNumberSpouse" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifyOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="AdvanceSalary_AdvanceSalaryDetailInfo" Member="AdvanceSalary" ThisKey="AdvanceSalaryId" OtherKey="AdvanceSalaryId" Type="AdvanceSalary" IsForeignKey="true" />
+      <Association Name="Status_AdvanceSalaryDetailInfo" Member="Status" ThisKey="Purposeofloan" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+      <Association Name="Status_AdvanceSalaryDetailInfo1" Member="Status1" ThisKey="HomeVisitPlan" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+      <Association Name="Status_AdvanceSalaryDetailInfo2" Member="Status2" ThisKey="Jobleaving" OtherKey="StatusId" Type="Status" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

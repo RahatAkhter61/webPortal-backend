@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="smsapi" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://api.edsfze.com/smsapi.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://api.edsfze.com/smsapi.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Ismsapi_GetApiKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApiKey" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetApiKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApiKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetErrorCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorCodes" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetErrorCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetSenderIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSenderIds" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetSenderIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSenderIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetMesgTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesgTypes" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetMesgTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesgTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetBalanceCredits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceCredits" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetBalanceCredits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceCreditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetCreditsExpiryTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditsExpiryTime" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetCreditsExpiryTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditsExpiryTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetUserExpiryTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserExpiryTime" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetUserExpiryTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserExpiryTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_SendTextSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTextSMS" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_SendTextSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTextSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_CalTextSmsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalTextSmsCount" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_CalTextSmsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalTextSmsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_PushTextSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushTextSMS" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_PushTextSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushTextSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetCampaignDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCampaignDetails" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetCampaignDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCampaignDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetUserAllowedPrefixes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAllowedPrefixes" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetUserAllowedPrefixes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAllowedPrefixesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_ScheduleSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSMS" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_ScheduleSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_SendPrioritytSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPrioritytSMS" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_SendPrioritytSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPrioritytSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetMessagesStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesStatus" />
+  </wsdl:message>
+  <wsdl:message name="Ismsapi_GetMessagesStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Ismsapi">
+    <wsdl:operation name="GetApiKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetApiKey" message="tns:Ismsapi_GetApiKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetApiKeyResponse" message="tns:Ismsapi_GetApiKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetErrorCodes" message="tns:Ismsapi_GetErrorCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetErrorCodesResponse" message="tns:Ismsapi_GetErrorCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetSenderIds" message="tns:Ismsapi_GetSenderIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetSenderIdsResponse" message="tns:Ismsapi_GetSenderIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesgTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetMesgTypes" message="tns:Ismsapi_GetMesgTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetMesgTypesResponse" message="tns:Ismsapi_GetMesgTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceCredits">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetBalanceCredits" message="tns:Ismsapi_GetBalanceCredits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetBalanceCreditsResponse" message="tns:Ismsapi_GetBalanceCredits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditsExpiryTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetCreditsExpiryTime" message="tns:Ismsapi_GetCreditsExpiryTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetCreditsExpiryTimeResponse" message="tns:Ismsapi_GetCreditsExpiryTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExpiryTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetUserExpiryTime" message="tns:Ismsapi_GetUserExpiryTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetUserExpiryTimeResponse" message="tns:Ismsapi_GetUserExpiryTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTextSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/SendTextSMS" message="tns:Ismsapi_SendTextSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/SendTextSMSResponse" message="tns:Ismsapi_SendTextSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalTextSmsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/CalTextSmsCount" message="tns:Ismsapi_CalTextSmsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/CalTextSmsCountResponse" message="tns:Ismsapi_CalTextSmsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PushTextSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/PushTextSMS" message="tns:Ismsapi_PushTextSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/PushTextSMSResponse" message="tns:Ismsapi_PushTextSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampaignDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetCampaignDetails" message="tns:Ismsapi_GetCampaignDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetCampaignDetailsResponse" message="tns:Ismsapi_GetCampaignDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAllowedPrefixes">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetUserAllowedPrefixes" message="tns:Ismsapi_GetUserAllowedPrefixes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetUserAllowedPrefixesResponse" message="tns:Ismsapi_GetUserAllowedPrefixes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/ScheduleSMS" message="tns:Ismsapi_ScheduleSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/ScheduleSMSResponse" message="tns:Ismsapi_ScheduleSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPrioritytSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/SendPrioritytSMS" message="tns:Ismsapi_SendPrioritytSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/SendPrioritytSMSResponse" message="tns:Ismsapi_SendPrioritytSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/Ismsapi/GetMessagesStatus" message="tns:Ismsapi_GetMessagesStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Ismsapi/GetMessagesStatusResponse" message="tns:Ismsapi_GetMessagesStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Ismsapi" type="tns:Ismsapi">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApiKey">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetApiKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorCodes">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetErrorCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSenderIds">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetSenderIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMesgTypes">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetMesgTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceCredits">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetBalanceCredits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditsExpiryTime">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetCreditsExpiryTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExpiryTime">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetUserExpiryTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTextSMS">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/SendTextSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalTextSmsCount">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/CalTextSmsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushTextSMS">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/PushTextSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampaignDetails">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetCampaignDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAllowedPrefixes">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetUserAllowedPrefixes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSMS">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/ScheduleSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPrioritytSMS">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/SendPrioritytSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesStatus">
+      <soap:operation soapAction="http://tempuri.org/Ismsapi/GetMessagesStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="smsapi">
+    <wsdl:port name="BasicHttpBinding_Ismsapi" binding="tns:BasicHttpBinding_Ismsapi">
+      <soap:address location="http://api.edsfze.com/smsapi.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WPSFileProcessing" Class="WPSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-U66R582\KPDEV1;Initial Catalog=WPSFileProcessing;User ID=sa" SettingsObjectName="CORE_MODELS.Properties.Settings" SettingsPropertyName="WPSFileProcessingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DCRDetail" Member="DCRDetails">
+    <Type Name="DCRDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DifDetailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DIFWPSReferrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OriginalTransactionDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmpPersonalNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AgentTransactionReference" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WithdrawalAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RemitAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DCRFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CBUAE_AckFilename" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CBUAE_AckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RRI_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DifDetail_DCRDetail" Member="DifDetail" ThisKey="DifDetailId" OtherKey="Id" Type="DifDetail" IsForeignKey="true" />
+      <Association Name="RRI_Detail_DCRDetail" Member="RRI_Detail" ThisKey="RRI_Id" OtherKey="Id" Type="RRI_Detail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WPSConfiguration" Member="WPSConfigurations">
+    <Type Name="WPSConfiguration">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FileLocation" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Recursive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WaitTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Incoming_Outgoing" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DifDetail" Member="DifDetails">
+    <Type Name="DifDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PafDetailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="AgentCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmpPersonalNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TransactionDate" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="WithdrawlAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RemittAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RemitTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RemitReferrence" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PAFReferrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AgentTransactionReference" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="IsDCRGenerated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DCRGeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DCRFilename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DCRFilepath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CBUAE_DCRAckFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_DCRAckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="DifDetail_DCRDetail" Member="DCRDetails" ThisKey="Id" OtherKey="DifDetailId" Type="DCRDetail" />
+      <Association Name="DifDetail_PAFDetail" Member="PAFDetails" ThisKey="Id" OtherKey="DifId" Type="PAFDetail" />
+      <Association Name="DifMaster_DifDetail" Member="DifMaster" ThisKey="MasterId" OtherKey="Id" Type="DifMaster" IsForeignKey="true" />
+      <Association Name="PAFDetail_DifDetail" Member="PAFDetail" ThisKey="PafDetailId" OtherKey="Id" Type="PAFDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DifMaster" Member="DifMasters">
+    <Type Name="DifMaster">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="AgentRoutingCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="FileCreationDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FileCreationTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DIRCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalDisbursedAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CashDispensed" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RemittedOut" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentsDisbursementReference" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DifFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CBUAE_AckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CBUAE_AckFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="DifMaster_DifDetail" Member="DifDetails" ThisKey="Id" OtherKey="MasterId" Type="DifDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PAFDetail" Member="PAFDetails">
+    <Type Name="PAFDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PAFMasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EmpPersonalNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AgentCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NoOfDaysInMonth" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FixedAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VariableAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LeaveDays" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Decimal(11,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DifId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDifGenerated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DifFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DifGeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CBUAE_DifAckFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_DifAckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RFAId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsRFAGenerated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RFAFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RFAGeneratedOn" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CBUAE_RFA_AckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CBUAE_RFA_AckFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RFRId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsRFRGenerated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RFRFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RFRGeneratedOn" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CBUAE_RFRAckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CBUAE_RFRAckFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PAFDetail_DifDetail" Member="DifDetails" ThisKey="Id" OtherKey="PafDetailId" Type="DifDetail" />
+      <Association Name="PAFDetail_RFADetail" Member="RFADetails" ThisKey="Id" OtherKey="PAFDetailId" Type="RFADetail" />
+      <Association Name="PAFDetail_RRI_Detail" Member="RRI_Details" ThisKey="Id" OtherKey="PAFDetailId" Type="RRI_Detail" />
+      <Association Name="PAFDetail_TopUpRequest" Member="TopUpRequests" ThisKey="Id" OtherKey="PAFDetailId" Type="TopUpRequest" />
+      <Association Name="DifDetail_PAFDetail" Member="DifDetail" ThisKey="DifId" OtherKey="Id" Type="DifDetail" IsForeignKey="true" />
+      <Association Name="PAFMaster_PAFDetail" Member="PAFMaster" ThisKey="PAFMasterId" OtherKey="Id" Type="PAFMaster" IsForeignKey="true" />
+      <Association Name="RFADetail_PAFDetail" Member="RFADetail" ThisKey="RFAId" OtherKey="Id" Type="RFADetail" IsForeignKey="true" />
+      <Association Name="RFRDetail_PAFDetail" Member="RFRDetail" ThisKey="RFRId" OtherKey="Id" Type="RFRDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PAFMaster" Member="PAFMasters">
+    <Type Name="PAFMaster">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PAFUploadedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="PayrollDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NoOfRecords" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalSalary" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PAFName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EstablishmentNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsPRCGenerated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PRCFileName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_PRCAckFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_PRCAckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CBUAE_RRIFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_RRIDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="PAFMaster_PAFDetail" Member="PAFDetails" ThisKey="Id" OtherKey="PAFMasterId" Type="PAFDetail" />
+      <Association Name="PAFMaster_PRCDetail" Member="PRCDetails" ThisKey="Id" OtherKey="PafMasterId" Type="PRCDetail" />
+      <Association Name="PAFMaster_RRI_Detail" Member="RRI_Details" ThisKey="Id" OtherKey="PAFMasterId" Type="RRI_Detail" />
+      <Association Name="PAFMaster_SifMaster" Member="SifMasters" ThisKey="Id" OtherKey="PAFRefId" Type="SifMaster" />
+      <Association Name="PAFMaster_TopUpRequest" Member="TopUpRequests" ThisKey="Id" OtherKey="PAFMasterId" Type="TopUpRequest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRCDetail" Member="PRCDetails">
+    <Type Name="PRCDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PafMasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRCFilename" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PAFFilename" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalFixedPay" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalVariablePay" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPay" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="NoOfRecordsInPaf" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="PAFMaster_PRCDetail" Member="PAFMaster" ThisKey="PafMasterId" OtherKey="Id" Type="PAFMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RFADetail" Member="RFADetails">
+    <Type Name="RFADetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PAFDetailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PAFReferrence" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="EmployerUniqueId" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="EmpPersonalNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AmountReturned" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ReturnReasonCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EmployerReferrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="RFADetail_PAFDetail" Member="PAFDetails" ThisKey="Id" OtherKey="RFAId" Type="PAFDetail" />
+      <Association Name="PAFDetail_RFADetail" Member="PAFDetail" ThisKey="PAFDetailId" OtherKey="Id" Type="PAFDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RFRDetail" Member="RFRDetails">
+    <Type Name="RFRDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SifDetailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="SIFFilename" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ACKFilename" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AgentRountingCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EmpPersonalNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefundAmountRequested" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RefundRequestCode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="VarChar(23)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RFRFilename" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CBUAE_RFR_AckFilename" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CBUAE_RFR_AckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CBUAE_RRIFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_RRIDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RRI_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="RFRDetail_PAFDetail" Member="PAFDetails" ThisKey="Id" OtherKey="RFRId" Type="PAFDetail" />
+      <Association Name="SifDetail_RFRDetail" Member="SifDetail" ThisKey="SifDetailId" OtherKey="Id" Type="SifDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RRI_Detail" Member="RRI_Details">
+    <Type Name="RRI_Detail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PAFMasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PAFDetailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EmployerUniqueId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmpPersonalNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefundAmountRequested" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RefundRequestCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PAFFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LineReferrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="VarChar(23)" CanBeNull="true" />
+      <Column Name="ReceivedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DebittedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DebittedAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Association Name="RRI_Detail_DCRDetail" Member="DCRDetails" ThisKey="Id" OtherKey="RRI_Id" Type="DCRDetail" />
+      <Association Name="RRI_Detail_RRR_Detail" Member="RRR_Details" ThisKey="Id" OtherKey="RRI_Id" Type="RRR_Detail" />
+      <Association Name="PAFDetail_RRI_Detail" Member="PAFDetail" ThisKey="PAFDetailId" OtherKey="Id" Type="PAFDetail" IsForeignKey="true" />
+      <Association Name="PAFMaster_RRI_Detail" Member="PAFMaster" ThisKey="PAFMasterId" OtherKey="Id" Type="PAFMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RRR_Detail" Member="RRR_Details">
+    <Type Name="RRR_Detail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="LineReferrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmployerReference" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmpPersonalNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefundAmountRequested" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RefundStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="RejectReasonCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BalanceOutstandingWithAgent" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RRRFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RRI_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CBUAE_AckFilename" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CBUAE_AckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="RRR_Detail_RSUStatus" Member="RSUStatus" ThisKey="Id" OtherKey="RRRId" Type="RSUStatus" />
+      <Association Name="RRI_Detail_RRR_Detail" Member="RRI_Detail" ThisKey="RRI_Id" OtherKey="Id" Type="RRI_Detail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RSU_Master" Member="RSU_Masters">
+    <Type Name="RSU_Master">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AgentReference" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WPSReferenceForTheFile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AcceptedCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AcceptedAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RejectedCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RejectedAmount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="AgentRoutingCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ReceivedOn" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RSU_Filename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="RSU_Master_RSUStatus" Member="RSUStatus" ThisKey="Id" OtherKey="MasterId" Type="RSUStatus" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RSUStatus" Member="RSUStatus">
+    <Type Name="RSUStatus">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RRRId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="LineReferrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmployerReferrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmpPersonalNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefundAmountRequested" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RefundStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BankCodeOfTheEmployer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmployerIBAN" Type="System.String" DbType="VarChar(23)" CanBeNull="true" />
+      <Column Name="RejectReasonCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OutstandingBalance" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Association Name="RRR_Detail_RSUStatus" Member="RRR_Detail" ThisKey="RRRId" OtherKey="Id" Type="RRR_Detail" IsForeignKey="true" />
+      <Association Name="RSU_Master_RSUStatus" Member="RSU_Master" ThisKey="MasterId" OtherKey="Id" Type="RSU_Master" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RTC_Detail" Member="RTC_Details">
+    <Type Name="RTC_Detail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SIF_WPS_Referrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Employer_Unique_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Emp_Personal_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount_Returned" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Return_Code_Reason" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Agent_Routing_Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Employer_Referrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SIF_Filename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="RTC_Master_RTC_Detail" Member="RTC_Master" ThisKey="MasterId" OtherKey="Id" Type="RTC_Master" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SifDetail" Member="SifDetails">
+    <Type Name="SifDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SifMasterId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecordType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="EstablishmentNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EmpPersonalNo" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="RoutingCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IBAN" Type="System.String" DbType="VarChar(23)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Basic" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Allowances" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="NetSalary" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LeavesPeriod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NoOfDaysInMonth" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SifDetail_RFRDetail" Member="RFRDetails" ThisKey="Id" OtherKey="SifDetailId" Type="RFRDetail" />
+      <Association Name="SifDetail_SIFNAKDetail" Member="SIFNAKDetails" ThisKey="Id" OtherKey="SifDetailId" Type="SIFNAKDetail" />
+      <Association Name="SifMaster_SifDetail" Member="SifMaster" ThisKey="SifMasterId" OtherKey="Id" Type="SifMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SifMaster" Member="SifMasters">
+    <Type Name="SifMaster">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SifDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EstbId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SifName" Type="System.String" DbType="VarChar(29)" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalSalary" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalEmployee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_AckFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_AckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CBUAE_NakFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_NakDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CBUAE_PAFFilename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CBUAE_PAFReceivedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NoOfPafRecords" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PAFRefId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoOfDIFRecords" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Coredb_CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Coredb_Reference" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="SifMaster_SifDetail" Member="SifDetails" ThisKey="Id" OtherKey="SifMasterId" Type="SifDetail" />
+      <Association Name="PAFMaster_SifMaster" Member="PAFMaster" ThisKey="PAFRefId" OtherKey="Id" Type="PAFMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SIFNAKDetail" Member="SIFNAKDetails">
+    <Type Name="SIFNAKDetail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SifDetailId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LineNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpPersonalNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ErrorNumber" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ErrorDescription" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ReceivedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActualFilename" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="SifDetail_SIFNAKDetail" Member="SifDetail" ThisKey="SifDetailId" OtherKey="Id" Type="SifDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TopUpRequest" Member="TopUpRequests">
+    <Type Name="TopUpRequest">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpPersonalNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EstablisthmentId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PAFMasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PAFDetailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GeneratedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Response" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="PAFDetail_TopUpRequest" Member="PAFDetail" ThisKey="PAFDetailId" OtherKey="Id" Type="PAFDetail" IsForeignKey="true" />
+      <Association Name="PAFMaster_TopUpRequest" Member="PAFMaster" ThisKey="PAFMasterId" OtherKey="Id" Type="PAFMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WPS_RTC_Returncode" Member="WPS_RTC_Returncodes">
+    <Type Name="WPS_RTC_Returncode">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="shortcode" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="statuscode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RTC_Master" Member="RTC_Masters">
+    <Type Name="RTC_Master">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Agent_Referrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WPS_File_Referrence" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SRI_Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Returned_Amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Agent_Routing_Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Received_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RTC_Filename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RTC_Filepath" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="RTC_rejected_status" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Modifyon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modifyby" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="RTC_Master_RTC_Detail" Member="RTC_Details" ThisKey="Id" OtherKey="MasterId" Type="RTC_Detail" />
+    </Type>
+  </Table>
+</Database>
